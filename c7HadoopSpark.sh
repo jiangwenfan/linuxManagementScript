@@ -5,36 +5,38 @@ echo """使用前提:
     3.memory > 1024M
     4.CPU core >= 1
     5.python3安装成功
+    
+    所需安装包在云端硬盘上
 """
-#sleep 3
+sleep 3
 
-#mkdir -p /opt/software/spark
-#
-#echo "解压释放"
-#tar -zxvf scala-2.11.12.tgz -C /opt/software/spark
-#tar -zxvf spark-2.3.2-bin-hadoop2.7.gz -C /opt/software/spark
-#
-#ln -s /opt/software/spark/scala-2.11.12/ /opt/software/spark/scala
-#ln -s /opt/software/spark/spark-2.3.2-bin-hadoop2.7/ /opt/software/spark/spark
-#
-#when file not exists,create file
-#if [ ! -x "~/.bashrc"]
-#then
-#    touch ~/.bashrc
-#fi
-#cp ~/.bashrc ~/.bashrc.backup
-#echo '
-#   export SCALA_HOME=/opt/software/spark/scala
-#   export PATH=$PATH:$SCALA_HOME/bin
-#
-#   export SPARK_HOME=/opt/software/spark/spark/
-#    export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
-#' >> ~/.bashrc
-#source ~/.bashrc
-#
-#clear
-#echo "验证scala---"
-#scala -version
+mkdir -p /opt/software/spark
+
+echo "解压释放"
+tar -zxvf scala-2.11.12.tgz -C /opt/software/spark
+tar -zxvf spark-2.3.2-bin-hadoop2.7.gz -C /opt/software/spark
+
+ln -s /opt/software/spark/scala-2.11.12/ /opt/software/spark/scala
+ln -s /opt/software/spark/spark-2.3.2-bin-hadoop2.7/ /opt/software/spark/spark
+
+when file not exists,create file
+if [ ! -x "~/.bashrc"]
+then
+    touch ~/.bashrc
+fi
+cp ~/.bashrc ~/.bashrc.backup
+echo '
+   export SCALA_HOME=/opt/software/spark/scala
+   export PATH=$PATH:$SCALA_HOME/bin
+
+   export SPARK_HOME=/opt/software/spark/spark/
+    export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+' >> ~/.bashrc
+source ~/.bashrc
+
+clear
+echo "验证scala---"
+scala -version
 
 echo "spark config----"
 sparkBase=/opt/software/spark/spark/conf/
