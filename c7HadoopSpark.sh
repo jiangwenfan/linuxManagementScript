@@ -1,16 +1,55 @@
 #!/usr/bin/bash
 echo """使用前提:
-    1.ping通主机名
     2.jdk安装成功
-    3.memory > 1024M
-    4.CPU core >= 1
-    5.python3安装成功
     
-    所需安装包在云端硬盘上
+    安装包来自内网nginx提供。
 """
 sleep 3
 
-mkdir -p /opt/software/spark
+
+echo "config hosts"
+hostname=`hostname`
+ip=`cat /etc/hosts |grep ${hostname} |grep 127.0.0.1 |cut -d" " -f 1`
+hostname=`cat /etc/hosts |grep ${hostname} |grep 127.0.0.1 |cut -d" " -f 2`
+#已经存在，则不添加，否则添加。
+if [ ! -n "$ip" ]
+then
+	hostname=`hostname`
+	echo "127.0.0.1 ${hostname}" >> /etc/hosts
+else
+	echo "已存在"
+fi
+ping $hostname -c 5 
+
+echo "config python3"
+pythonStatus=`python6 -V`
+if [ ! -n "${pythonStatus}" ]
+then
+	wget https://raw.githubusercontent.com/jiangwenfan/linuxManagementScript/main/c7AutoPy3.sh
+	chmod +x c7AutoPy3.sh
+	./c7AutoPy3.sh
+else
+	echo "已存在python3 enviration"
+fi
+
+echo "config java"
+#正在努力之中。。。。。。。
+
+
+#file not exists,download file from cloud
+if [ ! -f "scala-2.11.12.tgz" ]
+then
+	wget http://sick.pwall.icu:62022/spark/scala-2.11.12.tgz
+fi
+
+if [ ! -f "spark-2.3.2-bin-hadoop2.7.gz" ]
+	wget http://sick.pwall.icu:62022/spark/spark-2.3.2-bin-hadoop2.7.gz
+fi
+
+if [ ! -d "/opt/software/spark" ]
+then
+	mkdir -p /opt/software/spark
+fi
 
 echo "解压释放"
 tar -zxvf scala-2.11.12.tgz -C /opt/software/spark
@@ -65,5 +104,10 @@ source ~/.bashrc
 
 clear
 jps
+
+echo "spark使用: 
+	start-all.sh 启动sprak
+	stop-all.sh 停止spark
+"
 
 

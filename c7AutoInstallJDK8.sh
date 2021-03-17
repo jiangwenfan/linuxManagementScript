@@ -3,8 +3,8 @@
 
 echo "
 获取jdk文件:
-1.本地获取
-2.云存储获取(暂时未开启)
+1.本地获取(优先)
+2.云存储获取(由内网nginx提供)
 "
 if [ ! -f "jdk-8u281-linux-x64.tar.gz" ]
 then
@@ -16,23 +16,21 @@ then
     mkdir /opt/module #module不存在，创建。
 fi
 echo "解压配置"
-tar -zxvf jdk-8u281-linux-x64.tar.gz -C /opt/module
-ln -s jdk-8u281-linux-x64 jdk
-echo "
-JAVA_HOME=/opt/module/jdk
-CLASS_HOME=$JAVA_HOME/lib
-PATH=$PATH:$JAVA_HOME/bin
-" >> ~/.bashrc
+#tar -zxvf jdk-8u281-linux-x64.tar.gz -C /opt/module
+ln -s /opt/module/jdk1.8.0_281  /opt/module/jdk
+echo '
+export JAVA_HOME=/opt/module/jdk
+export CLASS_HOME=$JAVA_HOME/lib
+export PATH=$PATH:$JAVA_HOME/bin
+' >> ~/.bashrc
+
 source ~/.bashrc
 
 clear
 java
-slepp 1.5
 
-clear
 javac
-slepep 1.5
 
-clear
 javadoc
-sleep 1.5
+
+echo "出现environment不生效问题，重新进入bash"
