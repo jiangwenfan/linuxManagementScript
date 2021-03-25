@@ -43,6 +43,7 @@ then
 fi
 
 if [ ! -f "spark-2.3.2-bin-hadoop2.7.gz" ]
+then
 	wget http://sick.pwall.icu:62022/spark/spark-2.3.2-bin-hadoop2.7.gz
 fi
 
