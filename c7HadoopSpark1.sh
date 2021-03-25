@@ -22,7 +22,7 @@ fi
 ping $hostname -c 5 
 
 echo "config python3"
-pythonStatus=`python6 -V`
+pythonStatus=`python3 -V`
 if [ ! -n "${pythonStatus}" ]
 then
 	wget https://raw.githubusercontent.com/jiangwenfan/linuxManagementScript/main/c7AutoPy3.sh
