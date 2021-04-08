@@ -3,10 +3,10 @@
 #chmod +x /etc/rc.d/rc.local 
 #追加此脚本的绝对路径到rc.loal里面。
 
-screenName="ssh-server-frpc" #screen name 
+screenName="ssh-server-frpc" #screen name. -->need modified 
 screen -dmS $screenName  
 
-cmd="/root/frp/frpc -c /root/frp/frpc2.ini" #need exec command
+cmd="/root/frp/frpc -c /root/frp/frpc2.ini" #need exec command -->need modified
 screen -x -S $screenName -p 0 -X stuff "$cmd"  
 screen -x -S $screenName -p 0 -X stuff $'\n' #只有通过这个回车，才会执行上面这个命令 
 
