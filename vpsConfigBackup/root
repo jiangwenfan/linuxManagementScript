@@ -1,0 +1,2 @@
+*/5 * * * * flock -xn /tmp/stargate.lock -c '/usr/local/qcloud/stargate/admin/start.sh > /dev/null 2>&1 &'
+*/2 * * * * /bin/bash /opt/test.sh
