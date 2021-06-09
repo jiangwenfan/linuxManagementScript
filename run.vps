@@ -1,0 +1,3 @@
+set ws=WScript.CreateObject("WScript.Shell")
+
+ws.Run "d:\Prg\frp\frpc.exe -c d:\Prg\frp\frpc.ini",0

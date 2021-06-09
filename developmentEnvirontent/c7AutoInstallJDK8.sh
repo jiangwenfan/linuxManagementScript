@@ -4,11 +4,11 @@
 echo "
 获取jdk文件:
 1.本地获取(优先)
-2.云存储获取(由内网nginx提供)
+2.云存储获取
 "
 if [ ! -f "jdk-8u281-linux-x64.tar.gz" ]
 then
-    wget http://sick.pwall.icu:62022/jdk-8u281-linux-x64.tar.gz
+    http://cattle.pwall.icu/jdk-8u281-linux-x64.tar.gz
 fi
 
 if [ ! -d "/opt/module" ]
