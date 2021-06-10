@@ -1,0 +1,16 @@
+<!--
+WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
+OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
+  virsh net-edit openstack1
+or other application using the libvirt API.
+-->
+
+<network>
+  <name>openstack1</name>
+  <uuid>30135e64-5b6a-4dbd-ab00-664f5e084710</uuid>
+  <forward mode='nat'/>
+  <bridge name='virbr31' stp='on' delay='0'/>
+  <mac address='52:54:00:b5:e6:18'/>
+  <ip address='10.0.0.2' netmask='255.255.255.0'>
+  </ip>
+</network>
