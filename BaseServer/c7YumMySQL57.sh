@@ -1,3 +1,10 @@
+#!/bin/bash
+#version:
+#	MySQL 5.7
+#
+#run:
+#	./c7YumMySQL57.sh
+
 echo -e "安装mysql5.7\n"
 echo -e "安装含有mysql5.7的yum源头\n"
 rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm 

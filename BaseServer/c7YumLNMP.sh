@@ -1,6 +1,14 @@
 #!/bin/bash
+#
+#version:
+#	nginx (default) 
+#	mysql 5.7
+#	php 7.2
+#
+#run:
+#	./c7YumLNMP.sh
 
-echo -e "自动快速安装lnmp的环境"
+echo -e "yum自动安装lnmp的环境"
 
 echo "安装yum拓展源,安装yum工具"
 yum install epel-release -y
