@@ -1,8 +1,0 @@
-
-rsync #从nginx目录下备份html目录到github的仓库目录
-rsync #从mysql备份到github的仓库目录。
-
-crontab -e #每10分钟,进行执行rsync命令。 
-
-crontab -e #天进行字段commit提交
-
