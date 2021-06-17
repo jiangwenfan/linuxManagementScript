@@ -10,7 +10,7 @@ install #普通的解压安装
 config #进行配置
 
 ## 目录结构说明
-###BaseServer
+### BaseServer
 ```bash
 c7YumMySQL57.sh
 c7YumLNMP.sh	#centos7下yum安装
@@ -24,8 +24,8 @@ c7CompileLNMP.sh
 c7HadoopFakeDistributed.sh
 c7HadoopSpark.sh
 ```
-###developmentEnvironment
-###localServer
+### developmentEnvironment
+### localServer
 ###
 
 
