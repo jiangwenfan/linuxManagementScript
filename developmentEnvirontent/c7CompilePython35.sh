@@ -1,8 +1,9 @@
 ﻿#!/bin/bash
-#version 1.0 centos7快速安装python3.5
+#compile install python3.5 on centos7
 #1.1会将报错信息导出来作为日志文件。
-echo -e "centos7系统快速编译安装python3.5\n"
-echo "正在开始安装前的准备"
+
+echo -e "compile install python3.5 on centos7\n"
+echo "install ..."
 yum -y install wget gcc > /dev/null && echo "准备完毕，开始安装"
 echo "正在安装python3.5需要的依赖"
 yum install openssl-devel bzip2-devel expat-devel gdbm-devel readline-devel sqlite-devel -y > /dev/null && echo "依赖安装完毕！"
